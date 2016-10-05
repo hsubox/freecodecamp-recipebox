@@ -10,9 +10,9 @@ var DisplayIngredients = React.createClass({
     };
   },
   iter: function() {
-    return this.props.ingredients.map(function(ingredient) {
+    return this.props.ingredients.map(function(ingredient, idx) {
       return (
-        <li>{ingredient}</li>
+        <li key={""+idx}>{ingredient}</li>
       );
     });
   },
@@ -50,7 +50,7 @@ var DisplayRecipes = React.createClass({
     var currentRecipes = this;
     return this.props.recipes.map(function(recipe) {
       return (
-        <div className="panel panel-default">
+        <div className="panel panel-default" key={recipe.id}>
           <div className="panel-heading" role="tab" id={"heading"+recipe.id}>
             <h4 className="panel-title">
               <a role="button" data-toggle="collapse" data-parent="#accordion" href={"#collapse"+recipe.id} aria-expanded="false" aria-controls={"collapse"+recipe.id}>
@@ -101,7 +101,7 @@ var AddRecipe = React.createClass({
       <h4>New:</h4>
       <form className="recipe-form" onSubmit={this.handleSubmit}>
         <div className="form-group">
-          <label for="recipename" className="control-label">Recipe Name:</label>
+          <label htmlFor="recipename" className="control-label">Recipe Name:</label>
           <input
             type="text"
             id="recipename"
@@ -112,7 +112,7 @@ var AddRecipe = React.createClass({
             />
         </div>
         <div className="form-group">
-          <label for="ingredientslist" className="control-label">Ingredients:</label>
+          <label htmlFor="ingredientslist" className="control-label">Ingredients:</label>
           <input
             type="text"
             id="ingredientslist"
@@ -162,7 +162,7 @@ var EditRecipe = React.createClass({
       <form className="recipe-form" onSubmit={this.handleEdit}>
         <h4>Modify:</h4>
         <div className="form-group">
-          <label for="recipename" className="control-label">Recipe Name:</label>
+          <label htmlFor="recipename" className="control-label">Recipe Name:</label>
           <input
             type="text"
             id="recipename"
@@ -173,7 +173,7 @@ var EditRecipe = React.createClass({
             />
         </div>
         <div className="form-group">
-          <label for="ingredientslist" className="control-label">Ingredients:</label>
+          <label htmlFor="ingredientslist" className="control-label">Ingredients:</label>
           <input
             type="text"
             id="ingredientslist"
