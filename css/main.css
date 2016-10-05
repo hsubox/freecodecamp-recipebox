@@ -1,0 +1,36 @@
+body {
+  background: #9492E5 url("http://data2.whicdn.com/images/18231138/large.png") repeat;
+  color: #52517F;
+}
+
+.panel-title > a {
+  color: #52517F;
+}
+
+header, footer {
+  background: #292940;
+  color: #9492E5;
+  text-align: center;
+}
+
+.title-div {
+  min-height: 100px;
+  padding: 30px;
+}
+
+#recipe-box-container {
+  min-width: 150px;
+  max-width: 600px;
+  width: 75%;
+  background: #A4A2FF;
+  padding: 50px 20px;
+}
+
+.container-form {
+  width: 100%;
+}
+
+footer {
+  min-height: 50px;
+  padding: 15px;
+}
