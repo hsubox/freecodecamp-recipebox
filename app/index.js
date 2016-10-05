@@ -1,6 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var $ = require("jquery");
+global.jQuery = require('jquery');
+require('bootstrap');
 
 var DisplayIngredients = React.createClass({
   propTypes: function() {
